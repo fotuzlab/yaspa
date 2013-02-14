@@ -115,7 +115,9 @@ body {
 
 #about-page {
 	.sidebar-item {
+		cursor: pointer;
 		&.current {
+			cursor: default;
 			img {
 				height: 200px;
 			}

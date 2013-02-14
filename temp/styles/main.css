@@ -7602,7 +7602,15 @@ body footer .nav li a:hover {
   color: white;
 }
 
+/* line 117, ../../app/styles/main.scss */
+#about-page .sidebar-item {
+  cursor: pointer;
+}
 /* line 119, ../../app/styles/main.scss */
+#about-page .sidebar-item.current {
+  cursor: default;
+}
+/* line 121, ../../app/styles/main.scss */
 #about-page .sidebar-item.current img {
   height: 200px;
 }

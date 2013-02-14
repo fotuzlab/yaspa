@@ -9,6 +9,7 @@
         <title></title>
         <meta name="description" content=""/>
         <meta name="viewport" content="width=device-width"/>
+        <link rel="icon" type="image/ico" href="favicon.ico"/>
         <link rel="stylesheet" href="styles/main.css"/>
         <!--AngularUI stylesheets-->
         <link rel="stylesheet" href="../components/angular-ui/build/angular-ui.min.css"/>
@@ -24,7 +25,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </a>
-                <a class="brand" href="#">Y.A.S.P.A</a>
+                <a class="brand" href="#">Y.A.S.P.A.</a>
                 <div class="nav-collapse">
                     <ul class="nav">
                         <li ng-repeat="nav in navigation | orderBy: order"><a href="{{nav.link}}">{{nav.name}}</a></li>
@@ -78,7 +79,7 @@
         <script src="scripts/vendor/angular.js"></script>
 
         <script src="components/jquery/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="scripts/vendor/jquery.min.js"><\/script>')</script>
+        <script>window.jQuery || document.write('<script src="components/jquery/jquery.min.js"><\/script>')</script>
 
         <!-- build:js scripts/scripts.js -->
         <script src="scripts/app.js"></script>
@@ -108,8 +109,8 @@
         <script src="scripts/vendor/bootstrap/bootstrap-collapse.js"></script>
         <script src="scripts/vendor/bootstrap/bootstrap-tab.js"></script>
         <!-- Add angularUI -->
-        <script src="../components/angular-ui/build/angular-ui.js"></script>
-        <script src="../components/angular-ui/build/angular-ui.min.js"></script>
+        <script src="components/angular-ui/build/angular-ui.js"></script>
+        <script src="components/angular-ui/build/angular-ui.min.js"></script>
         <!-- endbuild -->
     </body>
 </html>
