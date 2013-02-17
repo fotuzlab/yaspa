@@ -12,7 +12,7 @@ yaspaApp.controller('YaspaNavigation', function($scope, $location, $http) {
 
 
   $http.get("data/nav.json").success(function(data){
-    $scope.$on('$viewContentLoaded', hideNav());
+  //  $scope.$on('$viewContentLoaded', hideNav());
   	$scope.navigation = data;
     $scope.actives = "";
     $scope.id = $location.path();
@@ -108,13 +108,4 @@ yaspaApp.controller('YaspaPrevNxt', function($scope, $location, $http) {
 });
 
 
- var hideNav = function() {
-  console.log('test');
-  $('li').bind('click', function() {
-    console.log('done');
-    if($('.btn-navbar').is(":visible")) {
-      $('.btn-navbar').click();
-    }
-    return;
-  });
-}
+ 

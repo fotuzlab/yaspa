@@ -23,3 +23,4 @@ var yaspaApp = angular.module('yaspaApp', ['ui'])
         redirectTo: '/'
       });
   }]);
+
