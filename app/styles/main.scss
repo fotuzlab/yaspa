@@ -1,6 +1,6 @@
 @import "compass_twitter_bootstrap";
 @import "compass_twitter_bootstrap_responsive";
-@import "compass_twitter_bootstrap_awesome";
+//@import "compass_twitter_bootstrap_awesome";
 
 // Variables --
 
@@ -177,19 +177,4 @@ body {
 		}
 	}
 
-}
-
-#test{
-  transition: all 0.9s ease;
-  -o-transition: all 0.9s ease;
-  -moz-transition: all 0.9s ease;
-  -webkit-transition: all 0.9s ease;
-  overflow: hidden;
-  padding: 5px;
-}
-/* The 'hidden' state to transition from & to */
-#test .ui-animate {
-  opacity: 0;
-  max-height: 0;
-  padding: 0 5px;
 }
