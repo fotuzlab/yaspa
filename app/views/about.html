@@ -1,11 +1,12 @@
 <div class="row-fluid" id="about-page" ng-controller="YaspaAbout">
 	<div class="span3"> <!-- sidebar -->
 		<div class="current">
-			<img src="{{mainImageUrl}}" class="img-rounded" />
+			<img src="{{mainImageUrl}}" />
 		</div>
 		<div class="row-fluid hidden-phone">
 			<div class="sidebar-item span6" ng-repeat="thumb in thumbnails">
-				<img src="{{thumb.image}}" ng-click="mainImage(thumb)" class="img-rounded" />
+				<img src="{{thumb.image}}" ng-click="mainImage(thumb)" />
+				<p class="quite section-name">Section Name</p>
 			</div>
 		</div>
 	</div> <!-- /sidebar -->
