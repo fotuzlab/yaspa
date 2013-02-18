@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+        <title></title>
+        <meta name="description" content=""/>
+        <meta name="viewport" content="width=device-width"/>
+        <link rel="stylesheet" href="styles/051c0509.main.css"/>
+        <!--AngularUI stylesheets-->
+        <link rel="stylesheet" href="../components/angular-ui/build/angular-ui.min.css"/>
+        <link rel="stylesheet" href="../components/angular-ui/build/angular-ui.css"/>
+        
+    </head>
+
+    <body ng-app="yaspaApp">
+        <div class="navbar navbar-fixed-top" ng-controller="YaspaNavigation">
+            <div class="navbar-inner container-fluid">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+                <a class="brand" href="#">Y.A.S.P.A</a>
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li ng-repeat="nav in navigation | orderBy: order"><a href="{{nav.link}}">{{nav.name}}</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </div>
+
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+        <![endif]-->
+        
+        <!--[if lt IE 9]>
+            <script src="scripts/vendor/61e2728c.es5-shim.min.js"></script>
+            <script src="scripts/vendor/241d7c33.json3.min.js"></script>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+
+        <!--Arrow navigation-->
+        <div class="page-controls hidden-phone" ng-controller="YaspaPrevNxt">
+            <a class="page-control left" href="{{prev}}">&lsaquo;</a>
+            <a class="page-control right" href="{{nxt}}">&rsaquo;</a>
+        </div>
+
+        <!-- Content Area -->
+        <div class="container-fluid content-area">
+            <div class="row-fluid">
+                <div ng-view class="offset1 span10"></div>
+            </div>
+        </div>
+
+        <footer ng-controller="YaspaFooter">
+            <div class="container-fluid">
+                <div class="row-fluid">
+                    <div class="span6">
+                        <p><small>&copy; Srijan Technologies Pvt Ltd</small></p>
+                    </div>
+                    <div class="span6">
+                        <small>
+                            <ul class="nav nav-pills pull-right">
+                                <li ng-repeat="footerItem in footer | orderBy: order"><a href="{{footerItem.link}}">{{footerItem.name}}</a></li>
+                            </ul>
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        
+
+        <script src="scripts/vendor/d10639ae.angular.js"></script>
+
+        <script src="components/jquery/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="scripts/vendor/jquery.min.js"><\/script>')</script>
+
+        <script src="scripts/89c61e46.scripts.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+
+        <script src="scripts/156df3b7.plugins.js"></script>
+    </body>
+</html>
