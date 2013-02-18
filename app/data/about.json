@@ -2,7 +2,7 @@
     {
       "image": "images/bookworm_penguin.png",
       "title": "What is it?",
-      "content": "<p>Yaspa is a <strong>Single Page Application</strong> (SPA).</p><p>An SPA is a web application that works inside a single page. What this entails is that all the different pages that you see here are not separate html files that refresh the entire screen everytime you click on a link; instead, these are all embedded into a single page and only the content that needs to update updates.</p><p>The obvious benefits are that there is less data sent and recieved and thus this approach proves lighter & faster than a conventional website. The redrawing of every page is also delegated to the client side which has the obvious effect of more bandwidth available on the server.</p><p>Though this is just a prototype/proof-of-concept that is primarily developed to demonstrate the use of technology that is needed for such apps, this application can also be readily used with some editions to serve real industrial purposes.</p><p><i class=\"icon-white icon-arrow-left\"></i> <em>Check out the other sections on the left to know more about Yaspa!</em></p>"
+      "content": "<p>Yaspa is a <strong>Single Page Application</strong> (SPA).</p><p>An SPA is a web application that works inside a single page. What this entails is that all the different pages that you see here are not separate html files that refresh the entire screen everytime you click on a link; instead, these are all embedded into a single page and only the content that needs to update updates.</p><p>The obvious benefits are that there is less data sent and recieved and thus this approach proves lighter & faster than a conventional website. The redrawing of every page is also delegated to the client side which has the obvious effect of more bandwidth available on the server.</p><p>Though this is just a prototype/proof-of-concept that is primarily developed to demonstrate the use of technology that is needed for such apps, this application can also be readily used with some editions to serve real industrial purposes.</p><p><em>Check out the other sections on this page to know more about Yaspa!</em></p>"
     },
     {
       "image": "images/cyclist_penguin.png",
@@ -12,7 +12,7 @@
     {
       "image": "images/drunken_penguin.png",
       "title": "Why is it better?",
-      "content": "<p>We researched deeply into this pipeline before getting into it. But why go to all the trouble you ask? Well because this is definitely better! And we're going to show you instead of telling you why:</p>"
+      "content": "<p>We researched deeply into this pipeline before getting into it. But why go to all the trouble you ask? Well because this is definitely better! And we're going to show you instead of telling you why:</p><p><iframe width=\"560\" height=\"315\" src=\"http://www.youtube.com/embed/BqDJqKGfIiE?wmode=opaque\" frameborder=\"0\" allowfullscreen></iframe></p>"
     },
     {
       "image": "images/Wild_penguin.png",
