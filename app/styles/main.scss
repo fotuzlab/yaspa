@@ -1,13 +1,14 @@
 @import "compass_twitter_bootstrap";
 @import "compass_twitter_bootstrap_responsive";
-@import "compass_twitter_bootstrap_awesome";
+// @import "compass_twitter_bootstrap_awesome";
 
 // Variables --
 
-$bgcolor: orange;
-$fontcolor: white;
-// $headfont: 'PT Sans', sans-serif;
-// $bodyfont: 'PT Sans', sans-serif;
+$bgcolor: rgba(#E5E1DC, 1.0);
+$bgimage: "../images/grid_bg.jpg";
+$fontcolor: #333333;
+$headfont: bold 'Source Sans Pro', sans-serif;
+$bodyfont: 'Source Sans Pro', sans-serif;
 
 // Mixins --
 
@@ -30,9 +31,25 @@ body {
 	padding-bottom: 100px;
 
 	color: $fontcolor;
-	background: $bgcolor;
-	// font-family: $bodyfont;
+	background-color: $bgcolor;
+	// background: url($bgimage) center 0 no-repeat;
+	background-attachment: fixed;
+	font-family: $bodyfont;
 	position: relative;
+
+	h1, h2, h3, h4, h5, h6 {
+		font-weight: 300;
+	}
+
+	p {
+		font-size: 18px;
+		font-weight: 300;
+		// background: rgba(lighten($bgcolor, 20%), 1.0)
+	}
+
+	strong {
+		font-weight: 700;
+	}
 
 	.text-info {
 		color: #3a87ad;
@@ -101,17 +118,18 @@ body {
 		height: auto !important;
 		display: inline-block;
 		margin-bottom: 5px;
-		background: darken($bgcolor, 10%);
+		// background: darken($bgcolor, 10%);
 		// margin: 5px;
 		-ms-interpolation-mode: bicubic;
 	}
 
 	footer {
-		box-shadow: 25px 5px 20px black;
+		box-shadow: 0px 25px 50px black;
 		// border-top: 1px dashed white;
 		position: fixed;
 		bottom: 0;
-		left: 10px;
+		left: 0;
+		padding-left: 5%;
 		width: 100%;
 		background: $bgcolor;
 		padding-top: 10px;
@@ -140,6 +158,9 @@ body {
 	legend {
 		color: $fontcolor; 
 	}
+	#submit {
+		margin-top: 30px;
+	}
 }
 
 #about-page {
@@ -160,6 +181,12 @@ body {
 		width: 100px !important;
 		margin: 0 5px 5px 0;
 		position: relative;
+
+		a:hover {
+			.section-name {
+				display: block !important;
+			}
+		}
 		
 		img {
 			height: 100px !important;
@@ -167,8 +194,9 @@ body {
 		}
 
 		.section-name {
-			background: rgba(#fff, 0.8);
-			color: black;
+			display: none;
+			background: rgba(#000, 0.8);
+			color: white;
 			position: absolute;
 			bottom: -10px;
 			padding-left: 5%;
