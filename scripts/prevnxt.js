@@ -53,7 +53,6 @@ yaspaApp.directive('prevNxtGesture', function($location, $http){
     		break;
     	}
     });
-    
   }	
 });
 
@@ -62,10 +61,10 @@ var yaspaswipe = function(dir, loc, scope, $http, $location) {console.log(dir);
       	  for(var i=0; i < data.length; i++){
             if(data[i].id == loc){
               if(dir=='nxt' && data[i+1]){ //next
-                scope.$apply($location.path(data[i+1].id));
+                $location.path(data[i+1].id);
               }
               else if(dir=='prev' && data[i-1]){ //prev
-                scope.$apply($location.path(data[i-1].id));
+                $location.path(data[i-1].id);
               }
             }
       }
