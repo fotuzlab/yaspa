@@ -100,8 +100,7 @@ yaspaApp.controller('YaspaPrevNxt', function($scope, $location, $http) {
       $scope.nxtShow = 0;
       $scope.prevShow = 0;
     }
-    $scope.keypressCallback = function(event) {
-      alert('Voila!');};
+
     });
   });
 

@@ -11,3 +11,25 @@ yaspaApp.directive('prevNxt', function(){
     });     
   }	
 });
+
+yaspaApp.directive('prevNxtKeys', function($location, $http){
+  return function(scope, element){
+    element.bind('keydown', function(e){
+      if(e.keyCode==37 || e.keyCode==39){
+      	var currentUrl = $location.path();
+      	$http.get("data/nav.json").success(function(data){
+      	  for(var i=0; i < data.length; i++){
+            if(data[i].id == currentUrl){
+              if(e.keyCode == 39 && data[i+1]){ //next
+                $location.path(data[i+1].id);
+              }
+              else if(e.keyCode == 37 && data[i-1]){ //prev
+                $location.path(data[i-1].id);
+              }
+            }
+      }
+    });
+      }
+    });
+  }	
+});
