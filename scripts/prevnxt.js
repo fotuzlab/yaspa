@@ -37,10 +37,10 @@ yaspaApp.directive('prevNxtKeys', function($location, $http){
 yaspaApp.directive('prevNxtGesture', function($location, $http){
   return function(scope, element){
   	var loc = $location.path();
-    element.bind('swipeleft', function(e){
+    element.bind('tapone', function(e){
     	yaspaswipe('prev', loc, scope, $http, $location);
     });
-    element.bind('swiperight', function(e){
+    element.bind('swipeone', function(e){
     	yaspaswipe('nxt', loc, scope, $http, $location);
     });
   }	
