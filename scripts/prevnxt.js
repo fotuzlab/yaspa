@@ -14,6 +14,7 @@ yaspaApp.directive('prevNxt', function(){
 
 yaspaApp.directive('prevNxtKeys', function($location, $http){
   return function(scope, element){
+  	scope.$on('$routeChangeStart', function(){
     element.bind('keydown', function(e){
       if(e.keyCode==37 || e.keyCode==39){
       	var currentUrl = $location.path();
@@ -31,26 +32,25 @@ yaspaApp.directive('prevNxtKeys', function($location, $http){
     });
       }
     });
+     });
   }	
 });
 
-yaspaApp.directive('prevNxtGesture', function($location, $http){
+yaspaApp.directive('prevNxtGesture', function($rootScope, $location, $http){
   return function(scope, element){
+  	$rootScope.$on('$routeChangeStart', function(){
   	var loc = $location.path();
     element.bind('swipeone', function(event_, obj){console.log(obj.description);
     	switch(obj.description){
-    		case 'swipe:1:right:up':
-    		case 'swipe:1:right:down':
-    		case 'swipe:1:right:steady':
-    		  yaspaswipe('nxt', loc, scope, $http, $location);
+    		case 'swipe:1:right:up' || 'swipe:1:right:down' || 'swipe:1:right:steady':
+    		  yaspaswipe('prev');
     		break;
-    		case 'swipe:1:left:up':
-    		case 'swipe:1:left:down':
-    		case 'swipe:1:left:steady':
-    		  yaspaswipe('prev', loc, scope, $http, $location);
+    		case 'swipe:1:left:up' || 'swipe:1:left:down' || 'swipe:1:left:steady':
+    		  yaspaswipe('nxt');
     		break;
     	}
-    	function yaspaswipe(dir, loc, scope, $http, $location) {console.log(dir);
+    	
+    	function yaspaswipe(dir) {console.log(dir);
 	$http.get("data/nav.json").success(function(data){
       	  for(var i=0; i < data.length; i++){
             if(data[i].id == loc){
@@ -63,7 +63,10 @@ yaspaApp.directive('prevNxtGesture', function($location, $http){
             }
       }
     });
-}
+
+  }	
+});
     });
   }	
 });
+
