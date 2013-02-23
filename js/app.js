@@ -4,7 +4,7 @@
  * This is the main js file.
  * All the routing is defined here.
  */
-var yaspaApp = angular.module('yaspaApp', [])
+var yaspaApp = angular.module('yaspaApp', ['yaspaAppDB'])
   .config(['$routeProvider', function($routeProvider) {
     $routeProvider
       .when('/', {
