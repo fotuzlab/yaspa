@@ -1,18 +1,42 @@
 'use strict';
 
-yaspaApp.controller('MainCtrl', function($scope) {
-  $scope.awesomeThings = [
-    'HTML5 Boilerplate',
-    'AngularJS',
-    'Testacular'
-  ];
+yaspaApp.controller('YaspaSwipe', function($scope, $http, $location, $rootScope) {
+  $scope.$on('$routeChangeStart', function(){
+    $http.get("data/nav.json").success(function(data){
+    var currentUrl = $location.path();
+    $scope.text="";
+    $scope.nxtShow = 0;
+    $scope.prevShow = 0;
+    for(var i=0; i < data.length; i++){
+      if(data[i].id == currentUrl){
+        var weight = i;
+        if(weight+1 < data.length){
+          $$("body").swipeLeft(function(){
+            $scope.$apply($location.path(data[weight+1].link));
+            console.log(data[weight+1].link);
+          });
+        }
+        if(weight-1 >= 0){
+          $$("body").swipeRight(function(){
+            $scope.$apply($location.path(data[weight-1].link));
+            console.log(data[weight-1].link);
+          });
+        }      
+      }
+    }
+    if($location.path() == '/page/'){
+      $scope.nxtShow = 0;
+      $scope.prevShow = 0;
+    }
+
+    });
+  });
 });
 
 yaspaApp.controller('YaspaNavigation', function($scope, $location, $http) {
 
-
   $http.get("data/nav.json").success(function(data){
-  //  $scope.$on('$viewContentLoaded', hideNav());
+  // $scope.$on('$viewContentLoaded', hideNav());
   	$scope.navigation = data;
     $scope.actives = "";
     $scope.id = $location.path();
@@ -34,7 +58,6 @@ yaspaApp.controller('YaspaNavigation', function($scope, $location, $http) {
 
 yaspaApp.controller('YaspaFooter', function($scope, $location, $http) {
 
-
   $http.get("data/footer.json").success(function(data){
   $scope.footer = data;
   var currentUrl = $location.hash();
@@ -55,6 +78,7 @@ yaspaApp.controller('YaspaFooter', function($scope, $location, $http) {
 });
 
 yaspaApp.controller('YaspaAbout', function($scope, $http) {
+
   $http.get("data/about.json").success(function(data){
     $scope.thumbnails = data;
     $scope.mainImageUrl = data[0].image;

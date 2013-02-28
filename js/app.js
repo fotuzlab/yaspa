@@ -9,11 +9,11 @@ var yaspaApp = angular.module('yaspaApp', [])
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        controller: 'YaspaAbout'
       })
       .when('/contact', {
         templateUrl: 'views/contact.html',
-        controller: 'MainCtrl'
+        controller: 'YaspaAbout'
       })
       .when('/about', {
         templateUrl: 'views/about.html',
